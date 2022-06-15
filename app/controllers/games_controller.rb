@@ -2,7 +2,7 @@ require 'open-uri'
 require 'json'
 
 class GamesController < ApplicationController
-  skip_before_action :authenticate_user!, only: %i[index show]
+  skip_before_action :authenticate_user!, only: %i[index show score]
   before_action :set_game, only: %i[ show edit update destroy ]
 
   # GET /games or /games.json
@@ -14,19 +14,23 @@ class GamesController < ApplicationController
   def show
     if @game.name == 'Longest Word'
       @letters = ('A'..'Z').to_a.shuffle[0..9]
-      # @answer = params[:answer]
-      # @letters = params[:letters]
-      # url = "https://wagon-dictionary.herokuapp.com/#{@answer}"
-      # json_string = URI.open(url).read
-      # result = JSON.parse(json_string)
-      #   if result["found"] && included?(@answer.upcase, @letters)
-      #     @score = "Congratulations! #{@answer.upcase} is a valid English word"
-      #   elsif result["found"]
-      #     @score = "Sorry but #{@answer.upcase} can't be built out of #{@letters}"
-      #   else
-      #     @score = "Sorry but #{@answer.upcase} does not seem to be a valid English word"
-      #   end
+
     end
+  end
+
+  def score
+    @answer = params[:answer]
+    @letters = params[:letters]
+    url = "https://wagon-dictionary.herokuapp.com/#{@answer}"
+    json_string = URI.open(url).read
+    result = JSON.parse(json_string)
+      if result["found"] && included?(@answer.upcase, @letters)
+        @score = "Congratulations! #{@answer.upcase} is a valid English word"
+      elsif result["found"]
+        @score = "Sorry but #{@answer.upcase} can't be built out of #{@letters}"
+      else
+        @score = "Sorry but #{@answer.upcase} does not seem to be a valid English word"
+      end
   end
 
   # GET /games/new
