@@ -5,3 +5,8 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+Game.destroy_all
+
+Game.create(name: 'Longest Word', description: 'What is the longest word you can find?')
+
+puts 'Games created'
