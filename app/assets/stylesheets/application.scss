@@ -25,32 +25,32 @@
   background-size: 100%;
 }
 #player1-race td.active {
-  background-image: url("images/player_1.png");
+  background-image: url("player_1.png");
   background-position: center;
 }
 #player2-race td.active {
-  background-image: url("images/player_2.png");
+  background-image: url("player_2.png");
   background-position: center;
 }
 .square {
   border: 1px solid black;
 }
 .finish {
-  background-image: url("images/finish.png");
+  background-image: url("finish.png");
   background-position: center;
   background-repeat: no-repeat;
   background-size: 100%;
 }
 .winner1 {
   position: relative;
-  background-image: url(images/player_1.png), url(images/finish.png);
+  background-image: url(player_1.png), url(finish.png);
   background-position: center, center;
   background-size: 100%;
   background-repeat: no-repeat, no-repeat;
 }
 .winner2 {
   position: relative;
-  background-image: url(images/player_2.png), url(images/finish.png);
+  background-image: url(player_2.png), url(finish.png);
   background-position: center, center;
   background-size: 100%;
   background-repeat: no-repeat, no-repeat;
