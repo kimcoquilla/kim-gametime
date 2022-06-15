@@ -1,5 +1,9 @@
 <p id="notice"><%= notice %></p>
 
+<div class="container">
+  <div class="row">
+    <div class="d-flex justify-content-between">
+      <div class="col col-6">
 <p>
   <strong>Name:</strong>
   <%= @game.name %>
@@ -10,7 +14,7 @@
   <%= @game.description %>
 </p>
 
-<%= link_to 'Edit', edit_game_path(@game) %> |
+<%# <%= link_to 'Edit', edit_game_path(@game) %>
 <%= link_to 'Back', games_path %>
 
 <% if @game.name == 'English Word' %>
@@ -24,9 +28,13 @@
   <form action="/score" method="post">
   <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
   <%= hidden_field_tag :letters, @letters %>
-  <label for="answer">What is the longest word you can find?</label>
+  <label for="answer">Enter a valid English Word:</label>
   <p><input type="text" id="answer" name="answer"></p>
   <input type="submit" class='btn btn-primary'value="Play">
   </form>
   </div>
 <% end %>
+      </div>
+    </div>
+  </div>
+</div>
