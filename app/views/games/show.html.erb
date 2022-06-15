@@ -3,7 +3,7 @@
 <div class="container">
   <div class="row">
     <div class="d-flex justify-content-between">
-      <div class="col col-6">
+      <div class="col col-12">
 <p>
   <strong>Name:</strong>
   <%= @game.name %>
@@ -34,6 +34,58 @@
   <input type="submit" class='btn btn-primary'value="Play">
   </form>
   </div>
+<% end %>
+<% if @game.name == 'Racing' %>
+  <h1 class="text-center">Wagon Race</h1>
+    <h3 class="text-center">Press `Q` for player one</h3>
+    <h3 class="text-center">Press `P` for player two</h3>
+    <hr>
+    <!-- You race HTML code here -->
+    <table class="racer-table">
+      <tr id="player1-race">
+        <td class="square active"></td>
+        <td class="square"></td>
+        <td class="square"></td>
+        <td class="square"></td>
+        <td class="square"></td>
+        <td class="square"></td>
+        <td class="square"></td>
+        <td class="square"></td>
+        <td class="square"></td>
+        <td class="square"></td>
+        <td class="square"></td>
+        <td class="square"></td>
+        <td class="square"></td>
+        <td class="square"></td>
+        <td class="square"></td>
+        <td class="square"></td>
+        <td class="square"></td>
+        <td class="square"></td>
+        <td class="square finish"></td>
+      </tr>
+      <tr id="player2-race">
+        <td class="square active"></td>
+        <td class="square"></td>
+        <td class="square"></td>
+        <td class="square"></td>
+        <td class="square"></td>
+        <td class="square"></td>
+        <td class="square"></td>
+        <td class="square"></td>
+        <td class="square"></td>
+        <td class="square"></td>
+        <td class="square"></td>
+        <td class="square"></td>
+        <td class="square"></td>
+        <td class="square"></td>
+        <td class="square"></td>
+        <td class="square"></td>
+        <td class="square"></td>
+        <td class="square"></td>
+        <td class="square finish"></td>
+      </tr>
+    </table>
+    <hr>
 <% end %>
       </div>
     </div>

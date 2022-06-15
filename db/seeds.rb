@@ -8,5 +8,6 @@
 Game.destroy_all
 
 Game.create(name: 'English Word', description: 'Enter a valid English Word')
+Game.create(name: 'Racing', description: 'First to reach finish line wins')
 
 puts 'Games created'
