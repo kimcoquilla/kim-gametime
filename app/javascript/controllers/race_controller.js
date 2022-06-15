@@ -6,6 +6,7 @@ let q = 0;
 let p = 0;
 
 const pressKey = (event) => {
+  event.preventDefault();
   if (event.key === "q") {
     q += 1;
     player1[q].classList.add('active');
