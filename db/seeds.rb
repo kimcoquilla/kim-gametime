@@ -7,6 +7,6 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 Game.destroy_all
 
-Game.create(name: 'Longest Word', description: 'What is the longest word you can find?')
+Game.create(name: 'English Word', description: 'Enter a valid English Word')
 
 puts 'Games created'
