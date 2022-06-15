@@ -16,9 +16,10 @@
 
 <%# <%= link_to 'Edit', edit_game_path(@game) %>
 <%= link_to 'Back', games_path %>
-
+<br>
+<br>
 <% if @game.name == 'English Word' %>
-  <h1>New game</h1>
+  <h3>New game</h3>
 
   <% @letters.each do |letter| %>
   <span><strong> <%= letter %> </strong></span>
@@ -28,7 +29,7 @@
   <form action="/score" method="post">
   <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
   <%= hidden_field_tag :letters, @letters %>
-  <label for="answer">Enter a valid English Word:</label>
+  <label for="answer">Enter a valid English Word out of the given letters above:</label>
   <p><input type="text" id="answer" name="answer"></p>
   <input type="submit" class='btn btn-primary'value="Play">
   </form>
