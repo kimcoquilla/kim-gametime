@@ -17,7 +17,7 @@
 <br>
 <br>
 <% if @game.name == 'English Word' %>
-  <h4>New game:</h4>
+  <h4>New game: <a href="javascript:window.location.reload(true)" ><i class="fa-solid fa-rotate"></i></a></h4>
   <h4>
   <% @letters.each do |letter| %>
   <span><strong> <%= letter %> </strong></span>
