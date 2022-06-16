@@ -123,10 +123,17 @@ a {
 }
 
 h2 a {
-  color: #D93BA1;
+  color: #FFB703;
 }
 
+a {
+  color: #FFB703;
+}
+
+a:hover {
+  color: #FB8500;
+}
 i {
-  color: #D93BA1;
+  color: #FFB703;
   margin-right: 4px;
 }
