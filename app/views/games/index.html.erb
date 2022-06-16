@@ -3,7 +3,36 @@
   <p>This is just a test playground app</p>
 </div>
 
-<div class="container">
+<div class= 'container pt-4'>
+  <h2 class="small-title mt-4 ">Games</h2>
+  <div class='row line-break'>
+    <div class='row'>
+      <div class='col col-sm-9'>
+        <div class="d-flex flex-wrap">
+          <% @games.each do |game| %>
+          <div class='col col-sm-4 p-2'>
+            <div class="card-product home-card mt-4 d-flex flex-column">
+              <% if game.name == 'English Word' %>
+              <img src= "https://grid.gograph.com/school-theme-with-abc-leters-vector-art_gg58898484.jpg" />
+              <% elsif game.name == 'Racing' %>
+              <img src="https://i.pinimg.com/236x/6a/63/43/6a6343eac9c9148ff2cad0c59590368c--gambar-automobile.jpg" />
+              <% end %>
+              <div class="card-product-infos d-flex justify-contents-between">
+                <div class="d-flex flex-column align-items-between m-1">
+                  <h2><%= link_to game.name, game_path(game) %></h2>
+                  <p class="mt-0"><%= game.description  %></p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <% end %>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<%# <div class="container">
   <div class="row">
     <div class="d-flex justify-content-between">
       <div class="col col-6">
@@ -19,15 +48,15 @@
           </thead>
 
           <tbody>
-            <% @games.each do |game| %>
+             @games.each do |game|
               <tr>
-                <td><%= game.name %></td>
-                <td><%= game.description %></td>
-                <td><%= link_to 'Play', game %></td>
+                <td><%= game.name </td>
+                <td><%= game.description </td>
+                <%# <td><%= link_to 'Play', game %>
                 <%# <td><%= link_to 'Edit', edit_game_path(game) </td> %>
-                <%# <td><%= link_to 'Destroy', game, method: :delete, data: { confirm: 'Are you sure?' } </td> %>
+                <%# <td><%= link_to 'Destroy', game, method: :delete, data: { confirm: 'Are you sure?' } </td>
               </tr>
-            <% end %>
+            <% end
           </tbody>
         </table>
 
@@ -35,5 +64,5 @@
       </div>
     </div>
   </div>
-</div>
+</div> %>
 <%# <%= link_to 'New Game', new_game_path %>
