@@ -19,6 +19,7 @@ class GamesController < ApplicationController
   end
 
   def score
+    @game = Game.find_by(name: 'English Word')
     @answer = params[:answer]
     @letters = params[:letters]
     url = "https://wagon-dictionary.herokuapp.com/#{@answer}"
