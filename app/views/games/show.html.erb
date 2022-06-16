@@ -29,12 +29,12 @@
   <%= hidden_field_tag :letters, @letters %>
   <label for="answer">Enter a valid English Word out of the given letters above:</label>
   <p><input type="text" id="answer" name="answer"></p>
-  <input type="submit" class='btn btn-primary'value="Play">
+  <input type="submit" class='btn btn-warning'value="Play">
   </form>
   </div>
 <% end %>
 <% if @game.name == 'Racing' %>
-  <h1 class="text-center">Racing 🏎   <a href="javascript:window.location.reload(true)" class='btn btn-primary'>Start</a>
+  <h1 class="text-center">Racing 🏎   <a href="javascript:window.location.reload(true)" class='btn btn-warning'>Start</a>
 </h1>
     <h3 class="text-center">Press `Q` for player one</h3>
     <h3 class="text-center">Press `P` for player two</h3>
