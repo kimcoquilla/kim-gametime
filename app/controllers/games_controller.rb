@@ -21,7 +21,7 @@ class GamesController < ApplicationController
       url = "https://countriesnow.space/api/v0.1/countries/capital"
       json_string = URI.open(url).read
       result = JSON.parse(json_string)
-      number = rand(0..99)
+      number = rand(0..196)
       @country = result["data"][number]
       @countname = @country["name"]
       @capital = @country["capital"]
@@ -52,7 +52,7 @@ class GamesController < ApplicationController
       if @cap.upcase == @capital.upcase
         @capres = "Congratulations! #{@cap.upcase} is the capital of #{@countname.upcase}"
       else
-        @capres = "Sorry please try again!"
+        @capres = "Sorry please try again! Correct answer is #{@capital.upcase}"
       end
   end
 
