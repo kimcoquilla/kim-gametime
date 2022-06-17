@@ -91,7 +91,7 @@
 <% if @game.name == 'Guess the Capital City' %>
   <h4>New game: <a href="javascript:window.location.reload(true)" ><i class="fa-solid fa-rotate"></i></a></h4>
   <h4>
-  <%= @country["name"] %>
+  <strong><%= @country["name"] %></strong>
   </h4>
   <div>
   <form action="/capital" method="post">
