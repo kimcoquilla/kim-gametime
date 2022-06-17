@@ -14,7 +14,16 @@ class GamesController < ApplicationController
   def show
     if @game.name == 'English Word'
       @letters = ('A'..'Z').to_a.shuffle[0..9]
+    end
 
+    if @game.name == 'Guess the Capital City'
+      @country = params[:country]
+      url = "https://countriesnow.space/api/v0.1/countries/capital"
+      json_string = URI.open(url).read
+      result = JSON.parse(json_string)
+      @country = result["data"][0]
+      @countname = @country["name"]
+      @capital = @country["capital"]
     end
   end
 
@@ -31,6 +40,18 @@ class GamesController < ApplicationController
         @score = "Sorry but #{@answer.upcase} can't be built out of #{@letters}"
       else
         @score = "Sorry but #{@answer.upcase} does not seem to be a valid English word"
+      end
+  end
+
+  def capital
+    @game = Game.find_by(name: 'Guess the Capital City')
+    @cap = params[:cap]
+    @countname = params[:countname]
+    @capital = params[:capital]
+      if @cap.upcase == @capital.upcase
+        @capres = "Congratulations! #{@cap.upcase} is the capital of #{@countname.upcase}"
+      else
+        @capres = "Sorry please try again!"
       end
   end
 

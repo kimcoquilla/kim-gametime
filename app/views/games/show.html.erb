@@ -33,6 +33,7 @@
   </form>
   </div>
 <% end %>
+
 <% if @game.name == 'Racing' %>
   <h1 class="text-center">Racing 🏎   <a href="javascript:window.location.reload(true)" class='btn btn-warning'>Start</a>
 </h1>
@@ -86,6 +87,24 @@
     </table>
     <hr>
 <% end %>
+
+<% if @game.name == 'Guess the Capital City' %>
+  <h4>New game: <a href="javascript:window.location.reload(true)" ><i class="fa-solid fa-rotate"></i></a></h4>
+  <h4>
+  <%= @country["name"] %>
+  </h4>
+  <div>
+  <form action="/capital" method="post">
+  <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
+  <%= hidden_field_tag :capital, @capital %>
+  <%= hidden_field_tag :countname, @countname %>
+  <label for="cap">Enter the capital city of the given country:</label>
+  <p><input type="text" id="cap" name="cap"></p>
+  <input type="submit" class='btn btn-warning'value="Play">
+  </form>
+  </div>
+<% end %>
+
       </div>
     </div>
   </div>
