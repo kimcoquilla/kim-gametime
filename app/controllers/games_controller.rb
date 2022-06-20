@@ -67,6 +67,18 @@ class GamesController < ApplicationController
       end
   end
 
+  def flag
+    @game = Game.find_by(name: 'Country Flag Game')
+    @flag = params[:flag]
+    @flagname = params[:flagname]
+    @flagimg = params[:flagimg]
+    if @flag.upcase == @flagname.upcase
+      @flagres = "Congratulations! You are awesome 😁"
+    else
+      @flagres = "Sorry please try again! Correct answer is #{@flagname.upcase}"
+    end
+  end
+
   # GET /games/new
   def new
     @game = Game.new
