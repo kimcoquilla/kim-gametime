@@ -10,5 +10,6 @@ Game.destroy_all
 Game.create(name: 'English Word', description: 'Enter a valid English Word')
 Game.create(name: 'Racing', description: 'First to reach finish line wins')
 Game.create(name: 'Guess the Capital City', description: 'Enter the capital city of the given country')
+Game.create(name: 'Country Flag Game', description: 'Enter the country of the given flag')
 
 puts 'Games created'
