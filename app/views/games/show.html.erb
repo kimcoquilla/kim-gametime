@@ -105,6 +105,23 @@
   </div>
 <% end %>
 
+<% if @game.name == 'Country Flag Game' %>
+  <h4>New game: <a href="javascript:window.location.reload(true)" ><i class="fa-solid fa-rotate"></i></a></h4>
+  <h4>
+  <img src="<%= @countryflag["flag"] %>" alt="Flag">
+  </h4>
+  <div>
+  <form action="/flag" method="post">
+  <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
+  <%= hidden_field_tag :flagimg, @flagimg %>
+  <%= hidden_field_tag :flagname, @flagname %>
+  <label for="flag">Enter the country of the given flag:</label>
+  <p><input type="text" id="flag" name="flag"></p>
+  <input type="submit" class='btn btn-warning'value="Play">
+  </form>
+  </div>
+<% end %>
+
       </div>
     </div>
   </div>
