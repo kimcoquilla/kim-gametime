@@ -108,7 +108,7 @@
 <% if @game.name == 'Country Flag Game' %>
   <h4>New game: <a href="javascript:window.location.reload(true)" ><i class="fa-solid fa-rotate"></i></a></h4>
   <h4>
-  <img src="<%= @countryflag["flag"] %>" alt="Flag">
+  <div class="flag"><img src="<%= @countryflag["flag"] %>" alt="Flag"></div>
   </h4>
   <div>
   <form action="/flag" method="post">
