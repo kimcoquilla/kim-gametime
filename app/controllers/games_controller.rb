@@ -26,6 +26,17 @@ class GamesController < ApplicationController
       @countname = @country["name"]
       @capital = @country["capital"]
     end
+
+    if @game.name == 'Country Flag Game'
+      @countryflag = params[:countryflag]
+      url = "https://countriesnow.space/api/v0.1/countries/flag/images"
+      json_string = URI.open(url).read
+      result = JSON.parse(json_string)
+      number = rand(0..196)
+      @countryflag = result["data"][number]
+      @flagname = @countryflag["name"]
+      @flagimg = @countryflag["flag"]
+    end
   end
 
   def score
