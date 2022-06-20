@@ -32,7 +32,7 @@ class GamesController < ApplicationController
       url = "https://countriesnow.space/api/v0.1/countries/flag/images"
       json_string = URI.open(url).read
       result = JSON.parse(json_string)
-      number = rand(1..220)
+      number = rand(1..210)
       @countryflag = result["data"][number]
       @flagname = @countryflag["name"]
       @flagimg = @countryflag["flag"]
