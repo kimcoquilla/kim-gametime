@@ -21,7 +21,7 @@ class GamesController < ApplicationController
       url = "https://countriesnow.space/api/v0.1/countries/capital"
       json_string = URI.open(url).read
       result = JSON.parse(json_string)
-      number = rand(0..200)
+      number = rand(0..250)
       @country = result["data"][number]
       @countname = @country["name"]
       @capital = @country["capital"]
