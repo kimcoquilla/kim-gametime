@@ -1,12 +1,16 @@
 <div class="container">
   <div class="row">
     <div class="d-flex justify-content-between">
-      <div class="col col-6">
+      <div class="col col-12">
+        <div class="card-product m-5">
+          <div class="card-product-infos">
 <h1>Result</h1>
 
 <h2> <%= @score %> </h2>
 
 <h2><%= link_to "Play again", game_path(@game) %> </h2>
+          </div>
+        </div>
       </div>
     </div>
   </div>
