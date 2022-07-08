@@ -19,7 +19,7 @@ class ReviewsController < ApplicationController
   def destroy
     @review = Review.find(params[:id])
     @review.destroy
-    redirect_to daycare_path(@review.game)
+    redirect_to game_path(@review.game)
   end
 
   private
