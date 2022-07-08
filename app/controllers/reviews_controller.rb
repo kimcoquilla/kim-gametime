@@ -1,4 +1,4 @@
-class ReviewController < ApplicationController
+class ReviewsController < ApplicationController
   before_action :set_game, only: %i[new create]
 
   def new
