@@ -12,6 +12,8 @@ class GamesController < ApplicationController
 
   # GET /games/1 or /games/1.json
   def show
+    @review = Review.new
+
     if @game.name == 'English Word'
       @letters = ('A'..'Z').to_a.shuffle[0..9]
     end
