@@ -11,10 +11,14 @@
             <div class="review-card mt-4">
               <div class="d-flex justify-content-between">
                 <div class="d-flex align-items-center review-card">
-                    <img src= "https://imagesvc.meredithcorp.io/v3/mm/image?url=https%3A%2F%2Fstatic.onecms.io%2Fwp-content%2Fuploads%2Fsites%2F13%2F2017%2F02%2F08%2F800x400-ms-frizzle-magic-school-bus.jpg&q=60" alt="" class="card-trip-user avatar-bordered" />
+                    <img src= "https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460__340.png" alt="" class="card-trip-user avatar-bordered" />
                   <div class="flex-column d-flex justify-content-center">
+                  <% if review.user.full_name == nil %>
                     <h3 class="mt-1"><strong><%= review.user.email %></strong></h3>
+                  <% else %>
+                    <h3 class="mt-1"><strong><%= review.user.full_name %></strong></h3>
                     <%# Add user location %>
+                  <% end %>
                     <p><em>Montreal, Quebec</em></p>
                   </div>
                 </div>
