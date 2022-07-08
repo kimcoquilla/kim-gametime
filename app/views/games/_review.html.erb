@@ -11,7 +11,7 @@
               <%= f.label "Stars", class: "filter-font" %>
               <%= f.select :stars, (1..5).to_a, selected: params[:stars] || 1, class: "form-control" %>
               <%= f.input :content, as: :text, html5: true %>
-              <%= f.button :submit, label: "Add a Review", class: "btn btn-primary confirm-btn" %>
+              <%= f.button :submit, label: "Add a Review", class: "btn btn-warning confirm-btn" %>
               <% end %>
           </div>
         </div>
