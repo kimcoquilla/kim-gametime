@@ -4,15 +4,15 @@
       <div class="col col-12">
         <div class="card-product m-5">
             <div class="card-product-infos">
-<p>
+<h4>
   <strong>Name:</strong>
   <%= @game.name %>
-</p>
+</h4>
 
-<p>
+<h5>
   <strong>Description:</strong>
   <%= @game.description %>
-</p>
+</h5>
 
 <%# <%= link_to 'Edit', edit_game_path(@game) %>
 <%= link_to 'Back', games_path %>
@@ -30,7 +30,7 @@
   <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
   <%= hidden_field_tag :letters, @letters %>
   <label for="answer">Enter a valid English Word out of the given letters above:</label>
-  <p><input type="text" id="answer" name="answer"></p>
+  <input type="text" id="answer" name="answer">
   <div class="mt-2"><input type="submit" class='btn btn-warning'value="Play"></div>
   </form>
   </div>
