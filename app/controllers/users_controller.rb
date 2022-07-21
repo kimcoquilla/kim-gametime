@@ -5,7 +5,7 @@ class UsersController < ApplicationController
 
   def update
     if current_user.update(user_params)
-      redirect_to user_path, notice: 'Your bio was successfully updated.'
+      redirect_to user_path(@user), notice: 'Your bio was successfully updated.'
     else
       render :edit
     end
