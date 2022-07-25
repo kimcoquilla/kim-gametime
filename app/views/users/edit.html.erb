@@ -1,0 +1,9 @@
+<div class="container form my-5">
+  <h1>Edit Profile</h1>
+  <%= simple_form_for(@user, :url => user_path, :method => :patch) do |f| %>
+    <%= f.input :full_name %>
+    <%= f.input :email %>
+    <%= f.submit "Edit Profile", class: "btn btn-warning confirm-btn" %>
+  <% end %>
+  <br>
+</div>
