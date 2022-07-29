@@ -1,11 +1,13 @@
 class UsersController < ApplicationController
   before_action :set_user, only: %i[show edit destroy]
 
+  def show; end
+
   def edit; end
 
   def update
     if current_user.update(user_params)
-      redirect_to user_path(@user), notice: 'Your bio was successfully updated.'
+      redirect_to user_path(current_user), notice: 'Your bio was successfully updated.'
     else
       render :edit
     end
