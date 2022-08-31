@@ -3,6 +3,7 @@
   <%= simple_form_for(@user, :url => user_path, :method => :patch) do |f| %>
     <%= f.input :full_name %>
     <%= f.input :email %>
+    <%= f.input :photo, as: :file %>
     <%= f.submit "Edit Profile", class: "btn btn-warning confirm-btn" %>
   <% end %>
   <br>
